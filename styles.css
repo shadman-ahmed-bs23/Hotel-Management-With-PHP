@@ -3,6 +3,24 @@ body {
     color: white;
 }
 
+.card {
+    background-color: #525252;
+    color: whitesmoke;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #333;
+}
+
+.btn-primary {
+    background-color: rgb(72, 112, 161);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: rgb(54, 80, 112);
+}
+
 .footer {
     position: fixed;
     left: 0;
