@@ -15,9 +15,17 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
+                <?php if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+                    ?>
+
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
                 </li>
+                <?php } else {?>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Login</a>
+                </li>
+                <?php }?>
             </ul>
 
         </div>
