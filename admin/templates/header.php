@@ -15,7 +15,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <title>Hotel Management </title>
+    <title>Admin Panel</title>
 </head>
 
 <body>
