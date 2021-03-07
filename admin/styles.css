@@ -3,6 +3,11 @@ body {
     color: white;
 }
 
+/**** Navbar *****/
+
+/**** Navbar *****/
+
+
 .form-div {
     background-color: #525252;
     color: white;
@@ -26,6 +31,39 @@ input {
     background-color: rgb(54, 80, 112);
 }
 
+.sidenav {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 10;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    color: #aaa;
+    display: block;
+    background-color: rgb(54, 80, 112);
+    margin: 10px 0px;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    background-color: rgb(72, 112, 161);
+}
+
+.main {
+    margin-left: 180px;
+    font-size: 28px;
+    padding: 0px 20px;
+    color: #bcbcbc;
+
+}
 
 .footer {
     position: fixed;
