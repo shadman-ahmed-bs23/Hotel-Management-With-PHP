@@ -11,7 +11,7 @@ class RoomType extends DbConnect
 
     public function getRoomType()
     {
-        $sql = "SELECT * FROM room_type";
+        $sql = "SELECT * FROM room_type ORDER BY room_type ASC";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
 

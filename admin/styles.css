@@ -79,6 +79,24 @@ input {
     box-shadow: 5px 5px 5px #333;
 }
 
+.add-room-form {
+    background-color: #525252;
+    color: white;
+    padding: 20px;
+    width: 40%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #333;
+}
+
+select {
+    color: black;
+    background-color: #aaa !important;
+}
+
+option {
+    color: black;
+}
+
 .footer {
     position: fixed;
     left: 0;
