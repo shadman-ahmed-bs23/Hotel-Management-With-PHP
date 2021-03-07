@@ -97,6 +97,31 @@ option {
     color: black;
 }
 
+.edit-icon {
+    color: rgb(40, 103, 180);
+    margin-right: 20px;
+    box-shadow: 5px 5px 5px #333;
+    cursor: pointer;
+}
+
+.edit-icon:hover {
+    color: rgb(38, 132, 247);
+
+}
+
+.delete-icon {
+    color: rgb(187, 73, 73);
+    margin-right: 20px;
+    box-shadow: 5px 5px 5px #333;
+    cursor: pointer;
+}
+
+.delete-icon:hover {
+    color: rgb(238, 93, 93);
+}
+
+
+
 .footer {
     position: fixed;
     left: 0;
