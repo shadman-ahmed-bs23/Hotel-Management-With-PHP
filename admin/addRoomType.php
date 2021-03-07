@@ -16,13 +16,11 @@
 ?>
 
 <div class="main animate__animated animate__fadeInLeft">
+    <hr>
     <h2>Add Room Types</h2>
-
     <hr>
 
-    <div class="container room-type-form mt-5 ">
-
-
+    <div class="container room-type-form mt-3 mb-3">
         <form method="post" action="./process.php">
             <div class="mb-3">
                 <label for="roomType" class="form-label">Room Type: </label>
@@ -40,31 +38,32 @@
         </form>
     </div>
 
-
+    <hr>
     <h3 class="mt-3">Available Types of Rooms: </h3>
-
+    <hr>
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">id</th>
+                <th scope="col">Room Type</th>
+                <th scope="col">Bed Type</th>
+                <th scope="col">Price</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
+            <?php
+                $types = new RoomType();
+                if ($types->getRoomType()) {
+                    foreach ($types->getRoomType() as $type) {
+                        echo '<tr>';
+                        echo "<td scope='col'>" . $type['id'] . "</td>";
+                        echo "<td scope='col'>" . $type['room_type'] . "</td>";
+                        echo "<td scope='col'>" . $type['bedding'] . "</td>";
+                        echo "<td scope='col'>" . $type['price'] . "</td>";
+                        echo '</tr>';
+                    }
+                }
+            ?>
 
         </tbody>
     </table>

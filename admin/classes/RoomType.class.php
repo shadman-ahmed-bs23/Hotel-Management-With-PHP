@@ -8,4 +8,15 @@ class RoomType extends DbConnect
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$room_type, $bedding, $price]);
     }
+
+    public function getRoomType()
+    {
+        $sql = "SELECT * FROM room_type";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        while ($result = $stmt->fetchAll()) {
+            return $result;
+        };
+    }
 }
