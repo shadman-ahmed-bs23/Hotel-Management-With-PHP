@@ -26,4 +26,19 @@ class Room extends DbConnect
             return $result;
         };
     }
+    public function getAvailableRooms()
+    {
+        $sql = "SELECT *
+        FROM rooms, room_type
+        WHERE room_type.id = rooms.room_type_id
+        AND rooms.available = 1";
+        //$sql = "SELECT * FROM rooms";
+
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        while ($result = $stmt->fetchAll()) {
+            return $result;
+        };
+    }
 }
