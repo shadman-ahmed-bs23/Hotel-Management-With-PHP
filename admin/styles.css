@@ -120,6 +120,19 @@ option {
     color: rgb(238, 93, 93);
 }
 
+/*** Boooking ****/
+
+.booking-form {
+    background-color: #525252;
+    color: white;
+    padding: 20px;
+    width: 60%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #333;
+}
+
+/**** Booking ends! ****/
+
 
 
 .footer {
