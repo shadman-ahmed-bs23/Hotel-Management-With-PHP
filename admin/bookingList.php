@@ -53,12 +53,21 @@
                             "</td>";
                         echo "<td scope='col'>" . $booking['check_out'] .
                             "</td>";
+                        $booking_id = (string) $booking['booking_id'];
+                        $room_id = (string) $booking['room_id'];
+                        $ids = $booking_id . "+" . $room_id;
+                        // echo "<td>" . $ids . "</td>";
 
                         echo "<td scope='col'>" . ($booking['confirmed'] ?
                             "Booking Confirmed" :
 
                             "<form action='bookingList.php' method='post'>
-                                <button type='submit' onClick=\"javascript: return confirm('Are you sure about confirmation?');\" name='confirmBtn' class='btn btn-sm btn-primary' value='{$booking['booking_id']}' >
+                                <button type='submit'
+                                onClick=
+                                \"javascript:return confirm('Are you sure about confirmation?');\"
+                                name='confirmBtn'
+                                class='btn btn-sm btn-primary'
+                                value='{$ids}' >
                                     Confirm
                                 </button>
                             </form>") .
@@ -102,10 +111,18 @@
             //     console.log('Thing was not saved to the database.');
             //   }
             //   </script>";
-            $booking_id = $_POST['confirmBtn'];
+
+            $ids = $_POST['confirmBtn'];
+
+            $str_arr = explode("+", $ids);
+            $booking_id = (int) $str_arr[0];
+            $room_id = (int) $str_arr[1];
 
             $booking = new Booking();
             $booking->updateBooking($booking_id);
+
+            $room = new Room();
+            $room->updateRoom($room_id);
 
             echo '<script>
             alert("Booking confirmed!");
