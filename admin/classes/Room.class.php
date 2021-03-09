@@ -41,4 +41,14 @@ class Room extends DbConnect
             return $result;
         };
     }
+    public function updateRoom($room_id)
+    {
+        $sql = "UPDATE rooms
+        SET available = 0
+        WHERE room_id=?";
+
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$room_id]);
+
+    }
 }

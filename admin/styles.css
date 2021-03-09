@@ -46,15 +46,15 @@ input {
 .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    color: #aaa;
+    color: white;
     display: block;
-    background-color: rgb(54, 80, 112);
+    background-color: rgb(72, 112, 161);
     margin: 10px 0px;
 }
 
 .sidenav a:hover {
     color: #f1f1f1;
-    background-color: rgb(72, 112, 161);
+    background-color: rgb(54, 80, 112);
 }
 
 .main {
