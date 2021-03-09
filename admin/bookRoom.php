@@ -15,7 +15,7 @@
 
 ?>
 
-<div class="main animate__animated animate__fadeInLeft">
+<div class="main mb-5 animate__animated animate__fadeInLeft">
     <hr>
     <h2>Book a Room</h2>
     <hr>

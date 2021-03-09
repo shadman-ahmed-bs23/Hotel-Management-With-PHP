@@ -57,7 +57,7 @@
     </div>
 
     <hr>
-    <h3 class="mt-3">Available Types of Rooms: </h3>
+    <h3 class="mt-3">Available Rooms: </h3>
     <hr>
     <table class="table">
         <thead>
