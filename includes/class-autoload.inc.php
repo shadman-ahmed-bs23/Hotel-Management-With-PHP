@@ -4,7 +4,7 @@ spl_autoload_register("autoload");
 
 function autoload($className)
 {
-    $path = 'classes/';
+    $path = 'admin/classes/';
     $extension = '.class.php';
     $fileName = $path . $className . $extension;
 

@@ -12,6 +12,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./admin/styles.css">
     <title>Hotel Management </title>
 </head>
 
