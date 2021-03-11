@@ -54,7 +54,7 @@
         </div>
 
         <div class="text-center mt-5">
-            <a href="reservation.php" class="btn btn-lg btn-primary">Book any Room</a>
+            <a href="bookRoom.php" class="btn btn-lg btn-primary">Book any Room</a>
         </div>
 
         <?php

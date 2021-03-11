@@ -21,6 +21,20 @@ body {
     background-color: rgb(54, 80, 112);
 }
 
+.btn-warning {
+    background-color: #d49d42;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #bd852b;
+    color: white;
+}
+
+.book-room {
+    margin-bottom: 30px;
+}
+
 .footer {
     position: fixed;
     left: 0;

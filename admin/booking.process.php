@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 
     echo '<script>
     alert("Booking Added Successfully");
-    window.location.href="bookRoom.php";
+    window.location.href="../index.php";
     </script>';
     // echo '<script>alert("Room Type added successfully!")</script>';
 

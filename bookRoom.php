@@ -3,33 +3,39 @@
     require_once "./templates/navigation.php";
     require_once "./includes/class-autoload.inc.php";
 
-    $room_id = $_GET['room_id'];
+    $roomDescription = null;
+    $room_id = null;
 
-    $roomObj = new Room();
-    $room = $roomObj->getRoomWithId($room_id);
+    if (isset($_GET['room_id'])) {
+        $room_id = $_GET['room_id'];
 
-    $room_type_id = $room['room_type_id'];
-    $room_number = $room['room_number'];
+        $roomObj = new Room();
+        $room = $roomObj->getRoomWithId($room_id);
 
-    $roomTypeObj = new RoomType();
-    $roomType = $roomTypeObj->getRoomTypeWithId($room_type_id);
+        $room_type_id = $room['room_type_id'];
+        $room_number = $room['room_number'];
 
-    $room_type = $roomType['room_type'];
-    $bedding = $roomType['bedding'];
-    $price = $roomType['price'];
+        $roomTypeObj = new RoomType();
+        $roomType = $roomTypeObj->getRoomTypeWithId($room_type_id);
 
-    $roomDescription = "Room Number: " . $room_number . " -- " . $room_type .
-        "(" . $bedding . ") - " . $price;
+        $room_type = $roomType['room_type'];
+        $bedding = $roomType['bedding'];
+        $price = $roomType['price'];
+
+        $roomDescription = "Room Number: " . $room_number . " -- " .
+            $room_type .
+            "(" . $bedding . ") - " . $price;
+    }
 
 ?>
 
-<div class="main mb-5 animate__animated animate__fadeInLeft">
+<div class="container mb-5 book-room animate__animated animate__fadeInLeft">
     <hr>
     <h2>Book a Room</h2>
     <hr>
 
     <div class="container booking-form mt-3 mb-3">
-        <form action="./booking.process.php" method="post">
+        <form action="./admin/booking.process.php" method="post">
             <div class="mb-3">
                 <label for="name" class="form-label">Name: </label>
                 <input type="text" name="name" class="form-control" id="name">
@@ -45,7 +51,12 @@
             <div class="mb-3">
                 <label for="roomId" class="form-label">Room:</label>
                 <select class="form-select" name="roomId">
-                    <option><?=$roomDescription?></option>
+                    <option value="<?=$room_id?>">
+                        <?php
+                            echo ($roomDescription) ? $roomDescription :
+                            'Select a room';
+                        ?>
+                    </option>
                     <?php
                         $rooms = new Room();
                         if ($rooms->getAvailableRooms()) {
