@@ -1,6 +1,11 @@
+html {
+    height: 100%;
+}
+
 body {
     background-color: #414141;
     color: white;
+
 }
 
 /**** Navbar *****/
@@ -132,8 +137,6 @@ option {
 }
 
 /**** Booking ends! ****/
-
-
 
 .footer {
     position: fixed;

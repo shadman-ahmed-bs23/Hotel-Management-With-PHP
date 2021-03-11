@@ -51,4 +51,13 @@ class Room extends DbConnect
         $stmt->execute([$room_id]);
 
     }
+    public function getRoomWithId($room_id)
+    {
+        $sql = "SELECT * FROM rooms WHERE room_id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$room_id]);
+        $result = $stmt->fetch();
+
+        return $result;
+    }
 }
