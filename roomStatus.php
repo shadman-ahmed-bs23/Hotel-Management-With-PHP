@@ -40,13 +40,12 @@
                             ? 'Yes'
                             : 'No') .
                             "</td>";
-                        echo
-                            "<td>
-                                <a  href='bookRoom.php?room_id=" .
-                            $room['room_id']
-                            . "' class='btn btn-warning mt-3'>Book</a>
-                            </td>";
-
+                        echo "<td>";
+                        echo $room['available'] ?
+                        "<a  href='bookRoom.php?room_id=" .
+                        $room['room_id']
+                        . "' class='btn btn-warning'>Book</a>
+                            </td>" : "Booking Not Available!";
                         echo '</tr>';
                     }
                 }
