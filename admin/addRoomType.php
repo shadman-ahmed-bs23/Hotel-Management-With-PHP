@@ -28,8 +28,15 @@
             </div>
             <div class="mb-3">
                 <label for="bedding" class="form-label">Bed Type: </label>
-                <input type="text" name="bedding" class="form-control" id="bedding">
+                <select class="form-select" aria-label="Default select example" name="bedding" id="bedding">
+                    <option selected value="">Select a bed type</option>
+                    <option value="Single">Single</option>
+                    <option value="Double">Double</option>
+                    <option value="Triple">Triple</option>
+                    <option value="Quad">Quad</option>
+                </select>
             </div>
+
             <div class="mb-3">
                 <label for="price" class="form-label">Price: </label>
                 <input type="number" name="price" class="form-control" id="price">
