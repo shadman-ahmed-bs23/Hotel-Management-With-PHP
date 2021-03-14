@@ -3,13 +3,13 @@
 class Booking extends DbConnect
 {
     public function addBooking($room_id, $name, $email, $phone, $check_in,
-        $check_out, $total_days) {
+        $check_out, $total_days, $payment_id) {
         $sql =
 
-            "INSERT INTO booking(room_id, name, email, phone, check_in, check_out, total_days) VALUES(?, ?, ?, ?, ?, ?, ?)";
+            "INSERT INTO booking(room_id, name, email, phone, check_in, check_out, total_days, payment_id) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$room_id, $name, $email, $phone, $check_in,
-            $check_out, $total_days]);
+            $check_out, $total_days, $payment_id]);
     }
     public function getBookings()
     {

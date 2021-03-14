@@ -16,8 +16,10 @@ if (isset($_POST['submit'])) {
     $difference = $d1->diff($d2); // Total Booking days;
     $totalDays = $difference->format('%m months, %d days');
 
+    $paymentId = rand(100000, 9999999);
+
     $booking->addBooking($roomId, $name, $email, $phone, $checkIn, $checkOut,
-        $totalDays);
+        $totalDays, $paymentId);
 
     var_dump($totalDays);
 
