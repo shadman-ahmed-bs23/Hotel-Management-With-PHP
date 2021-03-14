@@ -34,6 +34,7 @@
                 <th scope="col">Options</th>
             </tr>
         </thead>
+
         <tbody>
             <?php
                 $bookings = new Booking();
@@ -59,15 +60,40 @@
                         // echo "<td>" . $ids . "</td>";
 
                         echo "<td scope='col'>" . ($booking['confirmed'] ?
-                            "Booking Confirmed" :
+                            "<form action='bookingList.php' method='post'>
+                                <button type='submit'
+                                    onClick=
+                                    \"javascript:return confirm('Are you sure about confirmation?');\"
+                                    name='confirmBtn'
+                                    class='btn btn-sm btn-warning'
+                                    value='{$ids}'
+                                >
+                                    Checkout
+                                </button>
+                                <span class='me-2'><span>
+                                <span class='ms-2'><span>
+                                Confirmed
+                            </form>" :
 
                             "<form action='bookingList.php' method='post'>
                                 <button type='submit'
-                                onClick=
-                                \"javascript:return confirm('Are you sure about confirmation?');\"
-                                name='confirmBtn'
-                                class='btn btn-sm btn-primary'
-                                value='{$ids}' >
+                                    onClick=
+                                    \"javascript:return confirm('Are you sure about confirmation?');\"
+                                    name='confirmBtn'
+                                    class='btn btn-sm btn-warning'
+                                    value='{$ids}'
+                                >
+                                    Checkout
+                                </button>
+                                <span class='me-3'><span>
+                                <span class='ms-3'><span>
+                                <button type='submit'
+                                    onClick=
+                                    \"javascript:return confirm('Are you sure about confirmation?');\"
+                                    name='confirmBtn'
+                                    class='btn btn-sm btn-primary'
+                                    value='{$ids}'
+                                >
                                     Confirm
                                 </button>
                             </form>") .
@@ -89,6 +115,7 @@
 
         </tbody>
     </table>
+
 </div>
 
 <?php
