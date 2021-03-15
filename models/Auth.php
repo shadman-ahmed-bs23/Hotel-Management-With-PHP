@@ -4,7 +4,9 @@ class Auth extends DbConnect
 {
     public function isAdmin()
     {
-        $query = "SELECT * FROM admin WHERE username = :username AND password = :password";
+        $query =
+
+            "SELECT * FROM admin WHERE username = :username AND password = :password";
         $statement = $this->connect()->prepare($query);
         $statement->execute(
             array(

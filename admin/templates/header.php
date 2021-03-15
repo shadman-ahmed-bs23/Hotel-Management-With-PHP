@@ -19,7 +19,8 @@
         crossorigin="anonymous" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./../../assets/css/styles.css">
+    <link rel="stylesheet" href="./../../assets/css/admin.css">
     <title>Admin Panel</title>
 </head>
 

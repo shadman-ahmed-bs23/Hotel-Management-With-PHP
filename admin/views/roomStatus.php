@@ -8,14 +8,14 @@
 
 ?>
 <?php
-    require_once "./templates/header.php";
-    require_once "./templates/navigation.php";
-    require_once "./templates/sidenav.php";
-    require_once "./includes/class-autoload.inc.php";
+    require_once "../templates/header.php";
+    require_once "../templates/navigation.php";
+    require_once "../templates/sidenav.php";
+    require_once "../includes/class-autoload.inc.php";
 
 ?>
 
-<div class="main">
+<div class="main mb-5 animate__animated animate__fadeInLeft">
     <hr>
     <h2>Room Status</h2>
     <hr>
@@ -76,6 +76,6 @@
 
 <?php
 
-    require_once "./templates/footer.php";
+    require_once "../templates/footer.php";
 
 ?>

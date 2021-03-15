@@ -8,10 +8,10 @@
 
 ?>
 <?php
-    require_once "./templates/header.php";
-    require_once "./templates/navigation.php";
-    require_once "./templates/sidenav.php";
-    require_once "./includes/class-autoload.inc.php";
+    require_once "../templates/header.php";
+    require_once "../templates/navigation.php";
+    require_once "../templates/sidenav.php";
+    require_once "../includes/class-autoload.inc.php";
 
 ?>
 
@@ -150,6 +150,6 @@
 
 <?php
 
-    require_once "./templates/footer.php";
+    require_once "../templates/footer.php";
 
 ?>
