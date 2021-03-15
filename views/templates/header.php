@@ -14,10 +14,10 @@
         crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./../assets/css/styles.css">
-    <link rel="stylesheet" href="./../assets/css/admin.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="./assets/css/admin.css">
+    <link rel="stylesheet" href="./../views/assets/css/styles.css">
+    <link rel="stylesheet" href="./../views/assets/css/admin.css">
+    <link rel="stylesheet" href="./views/assets/css/styles.css">
+    <link rel="stylesheet" href="./views/assets/css/admin.css">
     <title>Hotel Management </title>
 </head>
 

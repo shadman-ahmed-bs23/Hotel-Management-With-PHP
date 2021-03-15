@@ -9,8 +9,8 @@
 ?>
 
 <?php
-    require_once "../templates/header.php";
-    require_once "../templates/navigation.php";
+    require_once "./templates/header.php";
+    require_once "./templates/navigation.php";
     require_once "../includes/class-autoload.inc.php";
 ?>
 <div class="container form-div mt-5 animate__animated animate__fadeInDown">
@@ -33,6 +33,6 @@
 
 <?php
 
-    require_once "../templates/footer.php";
+    require_once "./templates/footer.php";
 
 ?>

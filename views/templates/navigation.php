@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="../index.php">
+        <a class="navbar-brand" href="index.php">
             <h4>Hotel Management</h4>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -13,10 +13,10 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page"
-                        href="../index.php">Home</a>
+                        href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="admin/views/">Admin</a>
+                    <a class="nav-link" href="./admin/views">Admin</a>
                 </li>
             </ul>
 

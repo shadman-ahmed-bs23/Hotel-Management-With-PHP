@@ -1,0 +1,150 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #414141;
+    color: white;
+
+}
+
+/**** Navbar *****/
+
+/**** Navbar *****/
+
+
+.form-div {
+    background-color: #525252;
+    color: white;
+    padding: 20px;
+    width: 40%;
+    border-radius: 5px;
+    margin-top: 120px !important;
+    box-shadow: 5px 5px 5px #333;
+}
+
+input {
+    background-color: #aaa !important;
+}
+
+.btn-primary {
+    background-color: rgb(72, 112, 161);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: rgb(54, 80, 112);
+}
+
+.sidenav {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 10;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    background-color: rgb(72, 112, 161);
+    margin: 10px 0px;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    background-color: rgb(54, 80, 112);
+}
+
+.main {
+    margin-left: 180px;
+    padding: 0px 20px;
+    color: #bcbcbc;
+
+}
+
+.table {
+    color: white !important;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.room-type-form {
+    background-color: #525252;
+    color: white;
+    padding: 20px;
+    width: 40%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #333;
+}
+
+.add-room-form {
+    background-color: #525252;
+    color: white;
+    padding: 20px;
+    width: 40%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #333;
+}
+
+select {
+    color: black;
+    background-color: #aaa !important;
+}
+
+option {
+    color: black;
+}
+
+.edit-icon {
+    color: rgb(40, 103, 180);
+    margin-right: 20px;
+    box-shadow: 5px 5px 5px #333;
+    cursor: pointer;
+}
+
+.edit-icon:hover {
+    color: rgb(38, 132, 247);
+
+}
+
+.delete-icon {
+    color: rgb(187, 73, 73);
+    margin-right: 20px;
+    box-shadow: 5px 5px 5px #333;
+    cursor: pointer;
+}
+
+.delete-icon:hover {
+    color: rgb(238, 93, 93);
+}
+
+/*** Boooking ****/
+
+.booking-form {
+    background-color: #525252;
+    color: white;
+    padding: 20px;
+    width: 60%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #333;
+}
+
+/**** Booking ends! ****/
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: grey;
+    color: white;
+    text-align: center;
+}
