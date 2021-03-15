@@ -1,4 +1,4 @@
 <?php
 session_start();
 unset($_SESSION["user"]);
-header("location:index.php");
+header("location: ./../admin/views/index.php");

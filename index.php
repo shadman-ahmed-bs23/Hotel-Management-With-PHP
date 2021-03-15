@@ -1,6 +1,6 @@
 <?php
-    require_once "./templates/header.php";
-    require_once "./templates/navigation.php";
+    require_once "./views/templates/header.php";
+    require_once "./views/templates/navigation.php";
     require_once "./includes/class-autoload.inc.php";
 ?>
 
@@ -13,7 +13,8 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Deluxe Room</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    <p class="card-text">Some quick example text to build on the
+                        card title and make up the bulk of the
                         card's
                         content.</p>
                 </div>
@@ -24,7 +25,8 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Luxury Room</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    <p class="card-text">Some quick example text to build on the
+                        card title and make up the bulk of the
                         card's
                         content.</p>
                 </div>
@@ -35,7 +37,8 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Guest House</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    <p class="card-text">Some quick example text to build on the
+                        card title and make up the bulk of the
                         card's
                         content.</p>
                 </div>
@@ -46,7 +49,8 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Economic Room</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    <p class="card-text">Some quick example text to build on the
+                        card title and make up the bulk of the
                         card's
                         content.</p>
                 </div>
@@ -54,14 +58,16 @@
         </div>
 
         <div class="text-center mt-5">
-            <a href="bookRoom.php" class="btn btn-lg btn-primary">Book any Room</a>
+            <a href="./views/bookRoom.php" class="btn btn-lg btn-primary">Book
+                any Room</a>
         </div>
 
-        <?php
+        <div class="text-center mt-5">
+            <a href="./views/roomStatus.php" class="btn btn-lg btn-primary">Room
+                Status</a>
+        </div>
 
-            require_once "./roomStatus.php";
 
-        ?>
 
 
 
@@ -71,6 +77,6 @@
 
 <?php
 
-    require_once "./templates/footer.php";
+    require_once "./views/templates/footer.php";
 
 ?>

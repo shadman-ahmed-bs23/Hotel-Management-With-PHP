@@ -11,7 +11,7 @@
     require_once "./templates/header.php";
     require_once "./templates/navigation.php";
     require_once "./templates/sidenav.php";
-    require_once "./includes/class-autoload.inc.php";
+    require_once "../includes/class-autoload.inc.php";
 
 ?>
 
@@ -21,14 +21,16 @@
     <hr>
 
     <div class="container room-type-form mt-3 mb-3">
-        <form method="post" action="./process.php">
+        <form method="post" action="./../../controllers/create-room-type.php">
             <div class="mb-3">
                 <label for="roomType" class="form-label">Room Type: </label>
-                <input type="text" name="roomType" class="form-control" id="roomType">
+                <input type="text" name="roomType" class="form-control"
+                    id="roomType">
             </div>
             <div class="mb-3">
                 <label for="bedding" class="form-label">Bed Type: </label>
-                <select class="form-select" aria-label="Default select example" name="bedding" id="bedding">
+                <select class="form-select" aria-label="Default select example"
+                    name="bedding" id="bedding">
                     <option selected value="">Select a bed type</option>
                     <option value="Single">Single</option>
                     <option value="Double">Double</option>
@@ -39,9 +41,11 @@
 
             <div class="mb-3">
                 <label for="price" class="form-label">Price: </label>
-                <input type="number" name="price" class="form-control" id="price">
+                <input type="number" name="price" class="form-control"
+                    id="price">
             </div>
-            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit"
+                class="btn btn-primary">Submit</button>
         </form>
     </div>
 

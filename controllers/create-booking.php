@@ -1,6 +1,6 @@
 <?php
 
-include "./includes/class-autoload.inc.php";
+include "./../includes/class-autoload.inc.php";
 
 $booking = new Booking();
 

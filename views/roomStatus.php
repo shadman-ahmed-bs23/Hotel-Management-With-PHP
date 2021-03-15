@@ -1,4 +1,11 @@
-<div class="roomStatus mt-3">
+<?php
+    require_once "./templates/header.php";
+    require_once "./templates/navigation.php";
+    require_once "../includes/class-autoload.inc.php";
+
+?>
+
+<div class="container roomStatus mt-3">
 
     <hr>
     <h3>Room Status</h3>
@@ -55,3 +62,10 @@
     </table>
 
 </div>
+
+
+<?php
+
+    require_once "./templates/footer.php";
+
+?>
