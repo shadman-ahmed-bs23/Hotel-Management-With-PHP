@@ -13,6 +13,10 @@
     require_once "./templates/sidenav.php";
     require_once "../includes/class-autoload.inc.php";
 
+    //fetching room type
+    $types = new RoomType();
+    $data = $types->getRoomType();
+
 ?>
 
 <div class="main animate__animated animate__fadeInLeft">
@@ -30,19 +34,18 @@
                     <option>
                         Select Room Type:
                     </option>
-                    <?php
-                        $types = new RoomType();
-                        if ($types->getRoomType()) {
-                            foreach ($types->getRoomType() as $type) {
-                                echo "<option value=" . $type['id'] . ">" .
-                                    $type['room_type'] . "(" .
+
+                    <?php foreach ($data as $type) {?>
+                    <option value="<?=$type['id']?>">
+                        <?php echo $type['room_type'] . "(" .
                                     $type['bedding'] . ")" . " - " .
-                                    $type['price'] . "$</option>";
-                            }
-                        }
-                    ?>
+                                $type['price'] . "$"; ?>
+                    </option>
+                    <?php }?>
+
                 </select>
             </div>
+
             <div class="mb-3">
                 <label for="roomNumber" class="form-label">Room Number: </label>
                 <input type="text" name="roomNumber" class="form-control"

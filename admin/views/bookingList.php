@@ -13,6 +13,10 @@
     require_once "./templates/sidenav.php";
     require_once "../includes/class-autoload.inc.php";
 
+    //fetching room type
+    $booking = new Booking();
+    $data = $booking->getBookings();
+
 ?>
 
 <div class="main animate__animated animate__fadeInLeft">
@@ -36,82 +40,65 @@
         </thead>
 
         <tbody>
-            <?php
-                $bookings = new Booking();
-                if ($bookings->getBookings()) {
-                    foreach ($bookings->getBookings() as $booking) {
-                        echo '<tr>';
-                        echo "<td scope='col'>" . $booking['booking_id'] .
-                            "</td>";
-                        echo "<td scope='col'>" . $booking['room_number'] .
-                            "</td>";
-                        echo "<td scope='col'>" . $booking['floor'] .
-                            "</td>";
-                        echo "<td scope='col'>" . $booking['name'] . "</td>";
-                        echo "<td scope='col'>" . $booking['email'] . "</td>";
-                        echo "<td scope='col'>" . $booking['phone'] . "</td>";
-                        echo "<td scope='col'>" . $booking['check_in'] .
-                            "</td>";
-                        echo "<td scope='col'>" . $booking['check_out'] .
-                            "</td>";
-                        $booking_id = (string) $booking['booking_id'];
-                        $room_id = (string) $booking['room_id'];
-                        $ids = $booking_id . "+" . $room_id;
-                        // echo "<td>" . $ids . "</td>";
+            <?php foreach ($data as $booking) {
+                    $booking_id = (string) $booking['booking_id'];
+                    $room_id = (string) $booking['room_id'];
+                    $ids = $booking_id . "+" . $room_id;
+                ?>
+            <tr>
+                <td scope='col'><?php echo $booking['booking_id'] ?></td>
+                <td scope='col'><?php echo $booking['room_number'] ?></td>
+                <td scope='col'><?php echo $booking['floor'] ?></td>
+                <td scope='col'><?php echo $booking['name'] ?></td>
+                <td scope='col'><?php echo $booking['email'] ?></td>
+                <td scope='col'><?php echo $booking['phone'] ?></td>
+                <td scope='col'><?php echo $booking['check_in'] ?></td>
+                <td scope='col'><?php echo $booking['check_out'] ?></td>
 
-                        echo "<td scope='col'>" . ($booking['confirmed'] ?
+                <!-- TODO: Refactoring Required -->
+                <?php
+                    echo "<td scope='col'>" . ($booking['confirmed'] ?
                             "<form action='bookingList.php' method='post'>
-                                <button type='submit'
-                                    onClick=
-                                    \"javascript:return confirm('Are you sure about confirmation?');\"
-                                    name='confirmBtn'
-                                    class='btn btn-sm btn-warning'
-                                    value='{$ids}'
-                                >
-                                    Checkout
-                                </button>
-                                <span class='me-2'><span>
-                                <span class='ms-2'><span>
-                                Confirmed
-                            </form>" :
+                        <button type='submit'
+                            onClick=
+                            \"javascript:return confirm('Are you sure about confirmation?');\"
+                            name='confirmBtn'
+                            class='btn btn-sm btn-warning'
+                            value='{$ids}'
+                        >
+                            Checkout
+                        </button>
+                        <span class='me-2'><span>
+                        <span class='ms-2'><span>
+                        Confirmed
+                    </form>" :
 
                             "<form action='bookingList.php' method='post'>
-                                <button type='submit'
-                                    onClick=
-                                    \"javascript:return confirm('Are you sure about confirmation?');\"
-                                    name='confirmBtn'
-                                    class='btn btn-sm btn-warning'
-                                    value='{$ids}'
-                                >
-                                    Checkout
-                                </button>
-                                <span class='me-3'><span>
-                                <span class='ms-3'><span>
-                                <button type='submit'
-                                    onClick=
-                                    \"javascript:return confirm('Are you sure about confirmation?');\"
-                                    name='confirmBtn'
-                                    class='btn btn-sm btn-primary'
-                                    value='{$ids}'
-                                >
-                                    Confirm
-                                </button>
-                            </form>") .
+                        <button type='submit'
+                            onClick=
+                            \"javascript:return confirm('Are you sure about confirmation?');\"
+                            name='confirmBtn'
+                            class='btn btn-sm btn-warning'
+                            value='{$ids}'
+                        >
+                            Checkout
+                        </button>
+                        <span class='me-3'><span>
+                        <span class='ms-3'><span>
+                        <button type='submit'
+                            onClick=
+                            \"javascript:return confirm('Are you sure about confirmation?');\"
+                            name='confirmBtn'
+                            class='btn btn-sm btn-primary'
+                            value='{$ids}'
+                        >
+                            Confirm
+                        </button>
+                    </form>") .
                             "</td>";
-                        // echo
-
-                        //     "<td scope='col'>
-                        //     <form action='bookingList.php' method='post'>
-                        //         <button type='submit' name='confirmBtn' value='{$booking['booking_id']}' >
-                        //             Confirm
-                        //         </button>
-                        //     </form>
-                        // </td>";
-
-                        echo '</tr>';
-                    }
-                }
-            ?>
+                    ?>
+            </tr>
+            <?php }?>
 
         </tbody>
     </table>
