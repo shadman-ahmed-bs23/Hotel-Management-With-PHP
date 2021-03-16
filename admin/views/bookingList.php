@@ -13,9 +13,17 @@
     require_once "./templates/sidenav.php";
     require_once "../includes/class-autoload.inc.php";
 
-    //fetching room type
+    //fetching all bookings
     $booking = new Booking();
     $data = $booking->getBookings();
+
+    function createOption($room_number, $room_type, $bedding, $price)
+    {
+        return
+            "Room Number: " . $room_number . " -- " .
+            $room_type . "(" . $bedding . ")" . " - " .
+            $price . "$";
+    }
 
 ?>
 
@@ -55,48 +63,38 @@
                 <td scope='col'><?php echo $booking['check_in'] ?></td>
                 <td scope='col'><?php echo $booking['check_out'] ?></td>
 
-                <!-- TODO: Refactoring Required -->
-                <?php
-                    echo "<td scope='col'>" . ($booking['confirmed'] ?
-                            "<form action='bookingList.php' method='post'>
-                        <button type='submit'
-                            onClick=
-                            \"javascript:return confirm('Are you sure about confirmation?');\"
-                            name='confirmBtn'
-                            class='btn btn-sm btn-warning'
-                            value='{$ids}'
-                        >
+                <?php if ($booking['confirmed']): ?>
+                <td scope='col'>
+                    <form action='bookingList.php' method='post'>
+                        <button onClick="return confirm('Are you sure?');"
+                            name='confirmBtn' class='btn btn-sm btn-warning'
+                            value="<?=$ids?>">
                             Checkout
                         </button>
-                        <span class='me-2'><span>
-                        <span class='ms-2'><span>
-                        Confirmed
-                    </form>" :
 
-                            "<form action='bookingList.php' method='post'>
-                        <button type='submit'
-                            onClick=
-                            \"javascript:return confirm('Are you sure about confirmation?');\"
-                            name='confirmBtn'
-                            class='btn btn-sm btn-warning'
-                            value='{$ids}'
-                        >
+                        <span class="ms-2">Confirmed</span>
+                    </form>
+                </td>
+                <?php else:
+                    ?>
+                <td scope='col'>
+                    <form action='bookingList.php' method='post'>
+                        <button onClick="return confirm('Are you sure?');"
+                            name='confirmBtn' class='btn btn-sm btn-warning'
+                            value="<?=$ids?>">
                             Checkout
                         </button>
-                        <span class='me-3'><span>
-                        <span class='ms-3'><span>
+
                         <button type='submit'
-                            onClick=
-                            \"javascript:return confirm('Are you sure about confirmation?');\"
+                            onClick="return confirm('Are you sure?');"
                             name='confirmBtn'
-                            class='btn btn-sm btn-primary'
-                            value='{$ids}'
-                        >
+                            class='btn btn-sm btn-primary ms-3'
+                            value="<?=$ids?>">
                             Confirm
                         </button>
-                    </form>") .
-                            "</td>";
-                    ?>
+                    </form>
+                </td>
+                <?php endif;?>
             </tr>
             <?php }?>
 

@@ -3,6 +3,10 @@
     require_once "./templates/navigation.php";
     require_once "../includes/class-autoload.inc.php";
 
+    //fetching all rooms
+    $room = new Room();
+    $data = $room->getRooms();
+
 ?>
 
 <div class="container roomStatus mt-3">
@@ -25,38 +29,34 @@
             </tr>
         </thead>
         <tbody>
-            <?php
-                $rooms = new Room();
-                if ($rooms->getRooms()) {
-                    foreach ($rooms->getRooms() as $room) {
-                        echo '<tr>';
-                        echo "<td scope='col'>" . $room['room_id'] .
-                            "</td>";
-                        echo "<td scope='col'>" . $room['room_number']
-                            .
-                            "</td>";
-                        echo "<td scope='col'>" . $room['floor'] .
-                            "</td>";
-                        echo "<td scope='col'>" . $room['room_type'] .
-                            "</td>";
-                        echo "<td scope='col'>" . $room['bedding'] .
-                            "</td>";
-                        echo "<td scope='col'>" . $room['price'] .
-                            "</td>";
-                        echo "<td scope='col'>" . ($room['available']
-                            ? 'Yes'
-                            : 'No') .
-                            "</td>";
-                        echo "<td>";
-                        echo $room['available'] ?
-                        "<a  href='bookRoom.php?room_id=" .
-                        $room['room_id']
-                        . "' class='btn btn-warning'>Book</a>
-                            </td>" : "Booking Not Available!";
-                        echo '</tr>';
-                    }
-                }
-            ?>
+            <?php foreach ($data as $room) {?>
+            <tr>
+                <td scope='col'><?php echo $room['room_id'] ?></td>
+                <td scope='col'><?php echo $room['room_number'] ?></td>
+                <td scope='col'><?php echo $room['floor'] ?></td>
+                <td scope='col'><?php echo $room['room_type'] ?></td>
+                <td scope='col'><?php echo $room['bedding'] ?></td>
+                <td scope='col'><?php echo $room['price'] ?></td>
+
+                <?php if ($room['available']): ?>
+                <td scope='col'>Yes</td>
+                <?php else: ?>
+                <td scope='col'>No</td>
+                <?php endif;?>
+
+                <?php if ($room['available']):
+                    ?>
+                <td scope='col'>
+                    <a href='bookRoom.php?room_id=<?=$room['room_id']?>'
+                        class='btn btn-warning'>
+                        Book
+                    </a>
+                </td>
+                <?php else: ?>
+                <td scope='col'>Booking Not Available</td>
+                <?php endif;?>
+            </tr>
+            <?php }?>
 
         </tbody>
     </table>

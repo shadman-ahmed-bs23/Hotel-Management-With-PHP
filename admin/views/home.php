@@ -20,7 +20,8 @@
         molestias, voluptatem esse debitis quasi
         laborum tenetur dignissimos eveniet tempora ut, fugit temporibus
         suscipit aut officia animi assumenda dolore
-        voluptas.</p>
+        voluptas.
+    </p>
 </div>
 
 <?php

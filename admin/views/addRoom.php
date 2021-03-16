@@ -17,6 +17,14 @@
     $types = new RoomType();
     $data = $types->getRoomType();
 
+    function createOption($room_type, $bedding, $price)
+    {
+        return
+            $room_type .
+            "(" . $bedding . ")" . " - " .
+            $price . "$";
+    }
+
 ?>
 
 <div class="main animate__animated animate__fadeInLeft">
@@ -37,9 +45,10 @@
 
                     <?php foreach ($data as $type) {?>
                     <option value="<?=$type['id']?>">
-                        <?php echo $type['room_type'] . "(" .
-                                    $type['bedding'] . ")" . " - " .
-                                $type['price'] . "$"; ?>
+                        <?php
+                            echo createOption($type['room_type'],
+                                $type['bedding'], $type['price'])
+                            ?>
                     </option>
                     <?php }?>
 
@@ -56,8 +65,9 @@
                 <input type="text" name="floor" class="form-control" id="floor">
             </div>
 
-            <button type="submit" name="submit"
-                class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-primary">
+                Submit
+            </button>
 
         </form>
     </div>

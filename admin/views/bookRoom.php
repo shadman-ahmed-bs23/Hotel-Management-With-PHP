@@ -17,6 +17,13 @@
     $room = new Room();
     $data = $room->getAvailableRooms();
 
+    function createOption($room_number, $room_type, $bedding, $price)
+    {
+        return "Room Number: " . $room_number . " -- " .
+            $room_type . "(" . $bedding . ")" . " - " .
+            $price . "$";
+    }
+
 ?>
 
 <div class="main animate__animated animate__fadeInLeft">
@@ -49,12 +56,11 @@
                     <?php foreach ($data as $room) {?>
                     <option value="<?=$room['room_id']?>">
                         <?php
-                            $desc = "Room Number: " . $room['room_number'] .
-                                    " -- " .
-                                    $room['room_type'] . "(" .
-                                    $room['bedding'] . ")" . " - " .
-                                    $room['price'] . "$";
-                                echo $desc
+                            $desc = createOption($room['room_number'],
+                                $room['room_type'], $room['bedding'],
+                                $room['price']);
+
+                                echo $desc;
                             ?>
                     </option>
                     <?php }?>
@@ -73,8 +79,9 @@
                     class="form-control">
             </div>
 
-            <button type="submit" name="submit"
-                class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-primary">
+                Submit
+            </button>
         </form>
     </div>
 </div>
