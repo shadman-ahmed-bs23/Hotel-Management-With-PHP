@@ -13,6 +13,18 @@
     require_once "./templates/sidenav.php";
     require_once "../includes/class-autoload.inc.php";
 
+    //fetching room type
+    $types = new RoomType();
+    $data = $types->getRoomType();
+
+    function createOption($room_type, $bedding, $price)
+    {
+        return
+            $room_type .
+            "(" . $bedding . ")" . " - " .
+            $price . "$";
+    }
+
 ?>
 
 <div class="main animate__animated animate__fadeInLeft">
@@ -30,19 +42,19 @@
                     <option>
                         Select Room Type:
                     </option>
-                    <?php
-                        $types = new RoomType();
-                        if ($types->getRoomType()) {
-                            foreach ($types->getRoomType() as $type) {
-                                echo "<option value=" . $type['id'] . ">" .
-                                    $type['room_type'] . "(" .
-                                    $type['bedding'] . ")" . " - " .
-                                    $type['price'] . "$</option>";
-                            }
-                        }
-                    ?>
+
+                    <?php foreach ($data as $type) {?>
+                    <option value="<?=$type['id']?>">
+                        <?php
+                            echo createOption($type['room_type'],
+                                $type['bedding'], $type['price'])
+                            ?>
+                    </option>
+                    <?php }?>
+
                 </select>
             </div>
+
             <div class="mb-3">
                 <label for="roomNumber" class="form-label">Room Number: </label>
                 <input type="text" name="roomNumber" class="form-control"
@@ -53,8 +65,9 @@
                 <input type="text" name="floor" class="form-control" id="floor">
             </div>
 
-            <button type="submit" name="submit"
-                class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-primary">
+                Submit
+            </button>
 
         </form>
     </div>

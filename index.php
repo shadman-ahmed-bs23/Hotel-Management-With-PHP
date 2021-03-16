@@ -16,7 +16,8 @@
                     <p class="card-text">Some quick example text to build on the
                         card title and make up the bulk of the
                         card's
-                        content.</p>
+                        content.
+                    </p>
                 </div>
             </div>
         </div>
@@ -28,7 +29,8 @@
                     <p class="card-text">Some quick example text to build on the
                         card title and make up the bulk of the
                         card's
-                        content.</p>
+                        content.
+                    </p>
                 </div>
             </div>
         </div>
@@ -40,7 +42,8 @@
                     <p class="card-text">Some quick example text to build on the
                         card title and make up the bulk of the
                         card's
-                        content.</p>
+                        content.
+                    </p>
                 </div>
             </div>
         </div>
@@ -52,19 +55,22 @@
                     <p class="card-text">Some quick example text to build on the
                         card title and make up the bulk of the
                         card's
-                        content.</p>
+                        content.
+                    </p>
                 </div>
             </div>
         </div>
 
         <div class="text-center mt-5">
             <a href="./views/bookRoom.php" class="btn btn-lg btn-primary">Book
-                any Room</a>
+                any Room
+            </a>
         </div>
 
         <div class="text-center mt-5">
             <a href="./views/roomStatus.php" class="btn btn-lg btn-primary">Room
-                Status</a>
+                Status
+            </a>
         </div>
 
 

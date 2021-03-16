@@ -13,6 +13,10 @@
     require_once "./templates/sidenav.php";
     require_once "../includes/class-autoload.inc.php";
 
+    //fetching room type
+    $types = new RoomType();
+    $data = $types->getRoomType();
+
 ?>
 
 <div class="main animate__animated animate__fadeInLeft">
@@ -44,8 +48,9 @@
                 <input type="number" name="price" class="form-control"
                     id="price">
             </div>
-            <button type="submit" name="submit"
-                class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-primary">
+                Submit
+            </button>
         </form>
     </div>
 
@@ -62,20 +67,14 @@
             </tr>
         </thead>
         <tbody>
-            <?php
-                $types = new RoomType();
-                if ($types->getRoomType()) {
-                    foreach ($types->getRoomType() as $type) {
-                        echo '<tr>';
-                        echo "<td scope='col'>" . $type['id'] . "</td>";
-                        echo "<td scope='col'>" . $type['room_type'] . "</td>";
-                        echo "<td scope='col'>" . $type['bedding'] . "</td>";
-                        echo "<td scope='col'>" . $type['price'] . "</td>";
-                        echo '</tr>';
-                    }
-                }
-            ?>
-
+            <?php foreach ($data as $type) {?>
+            <tr>
+                <td scope='col'><?php echo $type['id'] ?></td>
+                <td scope='col'><?php echo $type['room_type'] ?></td>
+                <td scope='col'><?php echo $type['bedding'] ?></td>
+                <td scope='col'><?php echo $type['price'] ?></td>
+            </tr>
+            <?php }?>
         </tbody>
     </table>
 </div>

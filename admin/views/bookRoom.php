@@ -13,6 +13,17 @@
     require_once "./templates/sidenav.php";
     require_once "../includes/class-autoload.inc.php";
 
+    //fetching all available rooms
+    $room = new Room();
+    $data = $room->getAvailableRooms();
+
+    function createOption($room_number, $room_type, $bedding, $price)
+    {
+        return "Room Number: " . $room_number . " -- " .
+            $room_type . "(" . $bedding . ")" . " - " .
+            $price . "$";
+    }
+
 ?>
 
 <div class="main animate__animated animate__fadeInLeft">
@@ -38,22 +49,22 @@
             <div class="mb-3">
                 <label for="roomId" class="form-label">Room:</label>
                 <select class="form-select" name="roomId">
-                    <option>Select a room </option>
-                    <?php
-                        $rooms = new Room();
-                        if ($rooms->getAvailableRooms()) {
-                            foreach ($rooms->getAvailableRooms() as
-                                $room) {
-                                echo "<option value=" . $room['room_id'] . ">"
-                                    .
-                                    "Room Number: " . $room['room_number'] .
-                                    " -- " .
-                                    $room['room_type'] . "(" .
-                                    $room['bedding'] . ")" . " - " .
-                                    $room['price'] . "$</option>";
-                            }
-                        }
-                    ?>
+                    <option>
+                        Select a room
+                    </option>
+
+                    <?php foreach ($data as $room) {?>
+                    <option value="<?=$room['room_id']?>">
+                        <?php
+                            $desc = createOption($room['room_number'],
+                                $room['room_type'], $room['bedding'],
+                                $room['price']);
+
+                                echo $desc;
+                            ?>
+                    </option>
+                    <?php }?>
+
                 </select>
             </div>
             <div class="mb-3">
@@ -68,8 +79,9 @@
                     class="form-control">
             </div>
 
-            <button type="submit" name="submit"
-                class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-primary">
+                Submit
+            </button>
         </form>
     </div>
 </div>
