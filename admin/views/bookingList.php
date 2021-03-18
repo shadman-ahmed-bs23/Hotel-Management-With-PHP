@@ -67,9 +67,8 @@
                 <!-- Nested if else -->
                 <?php if ($booking['checked_out']): ?>
                 <td scope='col'>
-                    <form action='bookingList.php' method='get'>
-                        <button type='submit'
-                            onClick="return confirm('Are you Okay?');"
+                    <form action='./showBill.php' method='get'>
+                        <button type='submit' name='showBillBtn'
                             class='btn btn-sm btn-success' value="<?=$ids?>">
                             Show Bill
                         </button>
@@ -80,7 +79,7 @@
                     <form action="./../../controllers/checkout-booking.php"
                         method='get'>
                         <button type='submit'
-                            onClick="return confirm('Are you Okay?');"
+                            onClick="return confirm('Are you sure?');"
                             name='checkoutBtn' class='btn btn-sm btn-warning'
                             value="<?=$ids?>">
                             Checkout
