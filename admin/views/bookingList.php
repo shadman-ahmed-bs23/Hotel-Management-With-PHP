@@ -64,31 +64,38 @@
                 <td scope='col'><?php echo $booking['check_out'] ?></td>
 
                 <?php if ($booking['confirmed']): ?>
+                <!-- Nested if else -->
+                <?php if ($booking['checked_out']): ?>
                 <td scope='col'>
-                    <form action='bookingList.php' method='post'>
-                        <button onClick="return confirm('Are you sure?');"
-                            name='confirmBtn' class='btn btn-sm btn-warning'
-                            value="<?=$ids?>">
-                            Checkout
+                    <form action='./showBill.php' method='get'>
+                        <button type='submit' name='showBillBtn'
+                            class='btn btn-sm btn-success' value="<?=$ids?>">
+                            Show Bill
                         </button>
-
-                        <span class="ms-2">Confirmed</span>
                     </form>
                 </td>
-                <?php else:
-                    ?>
+                <?php else: ?>
                 <td scope='col'>
-                    <form action='bookingList.php' method='post'>
-                        <button onClick="return confirm('Are you sure?');"
-                            name='confirmBtn' class='btn btn-sm btn-warning'
+                    <form action="./../../controllers/checkout-booking.php"
+                        method='get'>
+                        <button type='submit'
+                            onClick="return confirm('Are you sure?');"
+                            name='checkoutBtn' class='btn btn-sm btn-warning'
                             value="<?=$ids?>">
                             Checkout
                         </button>
+                    </form>
+                    <!-- <a href="./../../controllers/create-booking.php?booking_id="
+                        class='btn btn-danger mt-3'>Delete</a> -->
+                </td>
+                <?php endif;?>
+                <?php else: ?>
+                <td scope='col'>
+                    <form action='bookingList.php' method='post'>
 
                         <button type='submit'
                             onClick="return confirm('Are you sure?');"
-                            name='confirmBtn'
-                            class='btn btn-sm btn-primary ms-3'
+                            name='confirmBtn' class='btn btn-sm btn-primary '
                             value="<?=$ids?>">
                             Confirm
                         </button>
@@ -131,6 +138,7 @@
             </script>';
         }
     }
+
 ?>
 
 <?php

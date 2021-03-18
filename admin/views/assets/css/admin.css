@@ -138,6 +138,56 @@ option {
 
 /**** Booking ends! ****/
 
+/**** Show Bill *****/
+
+.bill-container {
+    width: 60%;
+    background-color: #ededed;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 40px;
+    box-shadow: 5px 5px 5px #333;
+    padding: 20px;
+    color: #333;
+}
+
+.bill-heading {
+    padding: 10px;
+    border: 5px solid black;
+}
+
+.ids {
+    text-align: right;
+
+}
+
+.info fieldset {
+    color: black;
+    border: 1px solid black;
+    padding: 30px;
+    width: 50%;
+    margin: 10px;
+}
+
+.info {
+    display: flex;
+}
+
+fieldset {
+    color: black;
+    border: 1px solid black;
+    padding: 30px 30px 10px 30px;
+    margin: 10px;
+}
+
+.bill-table {
+    color: black !important;
+    border: 1px solid black;
+}
+
+/**** Show Bill end! *****/
+
+
 .footer {
     position: fixed;
     left: 0;
