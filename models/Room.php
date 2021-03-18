@@ -60,4 +60,14 @@ class Room extends DbConnect
 
         return $result;
     }
+
+    public function freeRoom($room_id)
+    {
+        $sql = "UPDATE rooms
+        SET available = 1
+        WHERE room_id=?";
+
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$room_id]);
+    }
 }

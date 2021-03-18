@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 
     echo '<script>
     alert("Booking Added Successfully");
-    window.location.href="../index.php";
+    window.location.href="../admin/views/bookingList.php";
     </script>';
     // echo '<script>alert("Room Type added successfully!")</script>';
 

@@ -75,9 +75,7 @@
                         </button>
                     </form>
                 </td>
-                <?php else:
-
-                    ?>
+                <?php else: ?>
                 <td scope='col'>
                     <form action="./../../controllers/checkout-booking.php"
                         method='get'>
