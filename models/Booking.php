@@ -36,4 +36,14 @@ class Booking extends DbConnect
         $stmt->execute([$booking_id]);
 
     }
+
+    public function checkoutBooking($booking_id)
+    {
+        $sql = "UPDATE booking
+        SET checked_out = 1
+        WHERE booking_id=?";
+
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$booking_id]);
+    }
 }
