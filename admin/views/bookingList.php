@@ -76,7 +76,7 @@
                 </td>
                 <?php else: ?>
                 <td scope='col'>
-                    <form action="./../../controllers/checkout-booking.php"
+                    <form action="./../../process/checkout-booking.php"
                         method='get'>
                         <button type='submit'
                             onClick="return confirm('Are you sure?');"
@@ -91,8 +91,8 @@
                 <?php endif;?>
                 <?php else: ?>
                 <td scope='col'>
-                    <form action='bookingList.php' method='post'>
-
+                    <form action='./../../process/confirm-booking.php'
+                        method='post'>
                         <button type='submit'
                             onClick="return confirm('Are you sure?');"
                             name='confirmBtn' class='btn btn-sm btn-primary '
@@ -110,36 +110,6 @@
 
 </div>
 
-<?php
-    //include "./includes/class-autoload.inc.php";
-
-    if ($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['confirmBtn'])) {
-        confirmBooking();
-    }
-    function confirmBooking()
-    {
-        if (isset($_POST['confirmBtn'])) {
-
-            $ids = $_POST['confirmBtn'];
-
-            $str_arr = explode("+", $ids);
-            $booking_id = (int) $str_arr[0];
-            $room_id = (int) $str_arr[1];
-
-            $booking = new Booking();
-            $booking->updateBooking($booking_id);
-
-            $room = new Room();
-            $room->updateRoom($room_id);
-
-            echo '<script>
-            alert("Booking confirmed!");
-            window.location.href="bookingList.php";
-            </script>';
-        }
-    }
-
-?>
 
 <?php
 

@@ -5,5 +5,5 @@
     <a href="bookRoom.php">Book a Room</a>
     <a href="bookingList.php">Booking List</a>
     <a href="accountSettings.php">Admin Accounts</a>
-    <a href="../../controllers/logout.php">Logout</a>
+    <a href="../../process/logout.php">Logout</a>
 </div>

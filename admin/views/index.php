@@ -16,7 +16,7 @@
 <div class="container form-div mt-5 animate__animated animate__fadeInDown">
 
     <h3 class="text-center">Admin Login</h3>
-    <form method="post" action="../../controllers/login.php">
+    <form method="post" action="../../process/login.php">
         <div class="mb-3">
             <label for="name" class="form-label">Username</label>
             <input type="text" name="username" class="form-control" id="name">
