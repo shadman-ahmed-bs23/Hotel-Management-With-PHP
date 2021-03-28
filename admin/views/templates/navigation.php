@@ -23,7 +23,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link"
-                        href="../../controllers/logout.php">Logout</a>
+                        href="../../process/logout.php">Logout</a>
                 </li>
                 <?php } else {?>
                 <li class="nav-item">
