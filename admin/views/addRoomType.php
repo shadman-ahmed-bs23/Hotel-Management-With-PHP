@@ -25,7 +25,7 @@
     <hr>
 
     <div class="container room-type-form mt-3 mb-3">
-        <form method="post" action="./../../controllers/create-room-type.php">
+        <form method="post" action="./../../process/create-room-type.php">
             <div class="mb-3">
                 <label for="roomType" class="form-label">Room Type: </label>
                 <input type="text" name="roomType" class="form-control"
