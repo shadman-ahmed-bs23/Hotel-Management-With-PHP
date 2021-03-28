@@ -1,9 +1,7 @@
 <?php
-
     include "./../includes/controller-autoload.inc.php";
 
     $roomType = new RoomTypeController();
-
     if (isset($_POST['submit'])) {
         $roomType->add();
     }

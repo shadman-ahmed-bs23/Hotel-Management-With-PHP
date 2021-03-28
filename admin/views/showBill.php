@@ -7,7 +7,7 @@
     }
 
     require_once "./templates/header.php";
-    require_once "../../controllers/bill-process.php";
+    require_once "../../process/bill-process.php";
 ?>
 
 <div class="container">

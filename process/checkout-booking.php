@@ -2,12 +2,12 @@
     include "./../includes/controller-autoload.inc.php";
 
     $booking = new BookingController();
-    if (isset($_POST['submit'])) {
-        $booking->add();
+    if ($_SERVER['REQUEST_METHOD'] == "GET" and isset($_GET['checkoutBtn'])) {
+        $booking->checkout();
     }
+
 ?>
 
 <script>
-alert("Booking Added Successfully");
 window.location.href = "../admin/views/bookingList.php";
-</script>;
+</script>

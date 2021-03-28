@@ -32,5 +32,4 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" and isset($_GET['showBillBtn'])) {
     $bill_id = $booking['payment_id'];
     $total_cost = $booking['cost'];
     $cost_per_day = $total_cost / $days_num;
-
 }

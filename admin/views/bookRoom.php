@@ -32,7 +32,7 @@
     <hr>
 
     <div class="container booking-form mt-3 mb-3">
-        <form action="./../../controllers/create-booking.php" method="post">
+        <form action="./../../process/create-booking.php" method="post">
             <div class="mb-3">
                 <label for="name" class="form-label">Name: </label>
                 <input type="text" name="name" class="form-control" id="name">
