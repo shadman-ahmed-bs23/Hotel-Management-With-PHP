@@ -18,7 +18,7 @@
     $data = $room->getRooms();
 ?>
 
-<div class="main mb-5 animate__animated animate__fadeInLeft">
+<div class="main mb-5 animate__animated animate__fadeInLeft room-status">
     <hr>
     <h2>Room Status</h2>
     <hr>

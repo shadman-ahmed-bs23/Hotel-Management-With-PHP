@@ -33,12 +33,11 @@
     <hr>
 
     <div class="container add-room-form mt-5 mb-3">
-        <form method="post" action="./../../controllers/create-room.php">
+        <form method="post" action="./../../process/create-room.php">
 
             <div class="mb-3" id="select_box">
                 <label for="roomTypeId" class="form-label">Room Type: </label>
-                <select onchange="fetch_select(this.value);" class="form-select"
-                    name="roomTypeId">
+                <select class="form-select" name="roomTypeId">
                     <option>
                         Select Room Type:
                     </option>

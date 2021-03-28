@@ -125,6 +125,10 @@ option {
     color: rgb(238, 93, 93);
 }
 
+.room-status {
+    padding-bottom: 30px !important;
+}
+
 /*** Boooking ****/
 
 .booking-form {
